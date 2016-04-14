@@ -36,6 +36,7 @@ var Funesti;
             };
             this.setup();
             this.active = false;
+            console.log("Game started");
         }
         Game.prototype.setup = function () {
             this.player = new Funesti.Player();
@@ -49,6 +50,7 @@ var Funesti;
         };
         return Game;
     })();
+    Funesti.Game = Game;
 })(Funesti || (Funesti = {}));
 var Funesti;
 (function (Funesti) {
@@ -129,6 +131,7 @@ var Funesti;
         }
         return Monster;
     })(Funesti.Entity);
+    Funesti.Monster = Monster;
 })(Funesti || (Funesti = {}));
 var Funesti;
 (function (Funesti) {
@@ -178,5 +181,6 @@ var Funesti;
         };
         return OpDamageBuff;
     })();
+    Funesti.OpDamageBuff = OpDamageBuff;
 })(Funesti || (Funesti = {}));
 //# sourceMappingURL=tsc.js.map
