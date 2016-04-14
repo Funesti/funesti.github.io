@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Funesti</title>
+    <script src="js/built/tsc.js"></script>
+  </head>
+  <body>
+      
+    <div id="main">
+        <h1>Testing it</h1>
+        <span>FPS:</span><span id="fps">0</span> |
+        <span>Active:</span><span id="active">false</span>
+        <br>
+        <hr>
+        <br>
+        <button id="startIt">Start it</button>
+        <button id="stopIt">Stop it</button>
+        <button id="activateOpBuff">Activate OP Buff</button>
+        <button id="consoleLog">Log debug data to console</button>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <span id="playerDetails"></span>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {            
+            $(function() {
+                var game = new Funesti.Game();
+            $('#startIt').click(function() {
+                game.start();
+            });
+            $('#stopIt').click(function() {
+                game.stop();
+            });
+            $('#activateOpBuff').click(function() {
+                var opDamageBuff = new Funesti.OpDamageBuff();
+                opDamageBuff.attach(game.player);
+            });
+            $('#consoleLog').click(function() {
+                console.log(game);
+            });
+            });
+        });
+    </script>
+  </body>
+</html>
